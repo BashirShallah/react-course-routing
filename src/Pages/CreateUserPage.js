@@ -24,7 +24,6 @@ export default class CreateUserPage extends Component {
     render(){
         return <div>
             <h2>User</h2>
-            
             <UsersForm values={this.state.user} onSubmit={this.addUser} />
         </div>;
     }
