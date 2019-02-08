@@ -4,6 +4,7 @@ import UsersPage from "./Pages/UsersPage"
 import UserPage from "./Pages/UserPage"
 import EditUserPage from "./Pages/EditUserPage"
 import CreateUserPage from "./Pages/CreateUserPage"
+import NotFound from "./Pages/NotFound"
 import "./App.css";
 
 const HomePage = ()=><div>Home</div>
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path="/users/create" exact component={CreateUserPage} />
             <Route path="/users/:id" exact component={UserPage} />
             <Route path="/users/edit/:id" exact component={EditUserPage} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </BrowserRouter>
