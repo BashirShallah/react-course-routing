@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Link, Switch} from "react-router-dom";
+import {BrowserRouter, Route, NavLink, Switch} from "react-router-dom";
 import UsersPage from "./Pages/UsersPage"
 import UserPage from "./Pages/UserPage"
 import EditUserPage from "./Pages/EditUserPage"
 import CreateUserPage from "./Pages/CreateUserPage"
+import "./App.css";
 
 const HomePage = ()=><div>Home</div>
 const AboutPage = ()=><div>About</div>
+
+const MyNavLink = (props)=><NavLink exact activeClassName="active" {...props}>{props.children}</NavLink>;
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <Link to="/">Home</Link> {" "}
-          <Link to="/users">Users</Link>{" "}
-          <Link to="/users/create">Create User</Link>{" "}
-          <Link to="/about">About</Link>
+          <MyNavLink to="/" >Home</MyNavLink>{" "}
+          <MyNavLink to="/users">Users</MyNavLink>{" "}
+          <MyNavLink to="/users/create">Create User</MyNavLink>{" "}
+          <MyNavLink to="/about">About</MyNavLink>
 
           <Switch>
             <Route path="/" exact component={HomePage} />
